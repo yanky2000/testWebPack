@@ -14,7 +14,12 @@ module.exports = {
         aggregateTimeout: 100
     },
     
-    devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null //eval'
+    devtool: NODE_ENV == 'development' ? "cheap-inline-module-source-map" : null, //eval'
+
+    plugins: [
+        new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(NODE_ENV),
+        })
+    ],    
     
-    
-};
+}
