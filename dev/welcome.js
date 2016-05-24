@@ -9,6 +9,5 @@ export default function (message) {
     
 
     alert(`Welcome 234 + ${message}`);
-    this.use = 22;
 };
 

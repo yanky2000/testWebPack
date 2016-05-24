@@ -37,23 +37,23 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
-            // exclude: './node_modules/',
-            // include: ".dev/",
-            // include: [
-                // path.resolve(_dirname, "dev")
-            // ],
+            include: __dirname + "/dev",
+            // loader: "babel?presets[]=es2015,plugins[]=transform-es2015-modules-commonjs",
             // loader: "babel?presets[]=es2015",
-            loader: "babel",
+            loader: "babel-loader",
         }]
     }
 };
 
 if (NODE_ENV == 'production') {
-    module.exports.plugins.push({
-        compress: {
-            warnings: false,
-            drop_console: true,
-            unsafe: true
-        }
-    })
+    console.log(`NODE_ENV is in ${NODE_ENV} mode` );
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
+        })
+    );
 };
