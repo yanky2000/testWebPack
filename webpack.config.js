@@ -2,12 +2,12 @@
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
-var USER = 'VICTOR';
+
 
 module.exports = {
     entry: "./home",
     output: {
-        filename: "build.js",
+        filename: "./build.js",
         library: "home"
     },
     watch: NODE_ENV == 'development', //true
@@ -34,14 +34,16 @@ module.exports = {
         extensions: ['', '.js']
     },
 
-    cacheDirectory: true,
-
     module: {
         loaders: [{
             test: /\.js$/,
-            exclude: './node_modules/',
-            loader: "babel?presets[]=es2015",
-            // loader: "babel-loader",
+            // exclude: './node_modules/',
+            // include: ".dev/",
+            // include: [
+                // path.resolve(_dirname, "dev")
+            // ],
+            // loader: "babel?presets[]=es2015",
+            loader: "babel",
         }]
     }
 };
