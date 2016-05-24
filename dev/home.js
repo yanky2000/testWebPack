@@ -1,6 +1,6 @@
 'use strict';
 
-import welcome from './dev/welcome.js';
+import welcome from './welcome.js';
 welcome('HOME home');
 let v = 222;
 

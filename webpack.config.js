@@ -5,9 +5,9 @@ const webpack = require('webpack');
 
 
 module.exports = {
-    entry: "./home",
+    entry: "./dev/home",
     output: {
-        filename: "./build.js",
+        filename: "./dev/build.js",
         library: "home"
     },
     watch: NODE_ENV == 'development', //true
