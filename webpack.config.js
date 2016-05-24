@@ -39,12 +39,9 @@ module.exports = {
     module: {
         loaders: [{
             test: /\.js$/,
-            // loader: "babel", //just babel?
-            // loader: "babel-loader", //just babel?
-            exclude: '/node_modules/',
+            exclude: './node_modules/',
             loader: "babel?presets[]=es2015",
-            // loader: "babel?optional[]=runtime",
-            // loader: "babel",
+            // loader: "babel-loader",
         }]
     }
 };
